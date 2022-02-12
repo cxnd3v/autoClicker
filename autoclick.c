@@ -13,6 +13,7 @@ void main() {
     do {
         if (GetKeyState(VK_CAPITAL)) { // Verifica se o caps lock está ativado
             printf("Autoclicker iniciado\n");
+            ShowWindow(FindWindow(NULL, "Administrador: Prompt de Comando - autoclick.exe"), SW_HIDE);
             do {
                 GetCursorPos(&cursorPos);
                 LeftClick(cursorPos.x, cursorPos.y);
@@ -20,6 +21,7 @@ void main() {
                 if (GetKeyState(VK_END)) break; // Verifica se o usuário clicou na tecla "END" para parar a execução
             } while (GetKeyState(VK_CAPITAL));
             printf("Autoclicker parado\n");
+            ShowWindow(FindWindow(NULL, "Administrador: Prompt de Comando - autoclick.exe"), SW_NORMAL);
         }
     } while (!GetKeyState(VK_END));
 }
