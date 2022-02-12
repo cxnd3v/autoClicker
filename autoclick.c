@@ -16,7 +16,7 @@ void main() {
             ShowWindow(FindWindow(NULL, "Administrador: Prompt de Comando - autoclick.exe"), SW_HIDE);
             do {
                 GetCursorPos(&cursorPos);
-                Sleep(1000);
+                Sleep(100);
                 LeftClick(cursorPos.x, cursorPos.y);
 
                 if (GetKeyState(VK_END)) break; // Verifica se o usuário clicou na tecla "END" para parar a execução
